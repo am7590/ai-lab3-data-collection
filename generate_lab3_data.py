@@ -1,15 +1,24 @@
+import wikipedia
+
+
 def break_into_groups(input_file, output_file):
     """
     Reads a text file, breaks the text into groups of 15 words, 
     and writes it into another file with a specified format.
     """
     try:
+
+        wiki_page = wikipedia.page("Capybara")   
+        print(wiki_page.content)
+ 
+       # print(page['extract'])
+
         # Read the input file
-        with open(input_file, 'r') as file:
-            text = file.read()
+        # with open(input_file, 'r') as file:
+        #     text = file.read()
 
         # Split the text into words
-        words = text.split()
+        words = wiki_page.content.split()
 
         # Initialize a list to store the groups
         groups = []
